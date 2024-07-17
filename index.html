@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Notepad</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/ico"/>
+    <link href="styles.css" type="text/css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="field">
+        <canvas id="canvas"></canvas>
+        <div class="tools">
+            <button onClick="clearCanvas()" type="button" class="button">Clear</button>
+            <button onClick="undoLast()" type="button" class="button">Undo</button>
+            <div onclick="changeColor(this)" class="color-field" style="background: red;"></div>
+            <div onclick="changeColor(this)" class="color-field" style="background: green;"></div>
+            <div onclick="changeColor(this)" class="color-field" style="background: blue;"></div>
+            <div onclick="changeColor(this)" class="color-field" style="background: yellow;"></div>
+            <input onInput="draw_color = this.value" type="color" class="color-picker">
+            <input type="range" class="range" min="1" max="100" class="pen-range" onInput="draw_width=this.value">
+            <button onClick="predictDigit()" type="button" class="button">Predict</button>
+            <input type="text" id="prediction" readonly>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
